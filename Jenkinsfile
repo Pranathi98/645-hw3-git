@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "pranathi2207/swe645-ast3-image-fin"
+        registry = "pranathi2207/swe645-ast3-image-fin:latest"
         registryCredential = 'Dockerhub'
         DOCKERHUB_PASS = credentials('Dockerhub')
         TIMESTAMP = new Date().format("yyyyMMdd_HHmmss")
@@ -17,7 +17,7 @@ pipeline {
                         sh 'echo ${BUILD_TIMESTAMP}'
                         
                          docker.withRegistry('',registryCredential){
-                            def customImage = docker.build("pranathi2207/swe645-ast3-image-fin:${env.TIMESTAMP}")
+                            def customImage = docker.build("pranathi2207/swe645-ast3-image-fin:latest-${env.TIMESTAMP}")
                         }
 //}
 
@@ -34,7 +34,7 @@ pipeline {
                 steps {
                     script {
                         docker.withRegistry('',registryCredential){
-                          sh "docker push pranathi2207/swe645-ast3-image-fin:${env.TIMESTAMP}"
+                          sh "docker push pranathi2207/swe645-ast3-image-fin:latest-${env.TIMESTAMP}"
                        }
 //                         sh 'docker push nagasumukh/newestimg:${env.TIMESTAMP}'
                     }
@@ -44,7 +44,7 @@ pipeline {
           stage('Deploying Rancher to single node') {
              steps {
                 script{
-                    sh "kubectl set image deployment/deploynp container-0=pranathi2207/swe645-ast3-image-fin:${env.TIMESTAMP}"
+                    sh "kubectl set image deployment/deploynp container-0=pranathi2207/swe645-ast3-image-fin:latest-${env.TIMESTAMP}"
 //                    sh 'kubectl set image deployment/deploymain container-0=nagasumukh/newestimg:${env.TIMESTAMP}'
                 }
              }
