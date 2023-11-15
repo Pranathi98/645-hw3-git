@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "645hw3-clus"
+  cluster:
+    server: "https://ec2-54-225-181-169.compute-1.amazonaws.com/k8s/clusters/c-m-zv7wwgtr"
+    certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2RENDQ\
+      VdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
+      kdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNV\
+      GN3TURBeApORGM0TWpBZUZ3MHlNekV4TVRVd01qRTVOREphRncwek16RXhNVEl3TWpFNU5ESmFNR\
+      Vl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV\
+      1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56QXdNREUwTnpneU1Ga3dFd1lIS29aSXpqMENBU\
+      VlJS29aSXpqMERBUWNEUWdBRVFZbmxTQVdXL00vLwprc2ttNk9LMWlUaVY0NlM4VkY4dWxoMGpXc\
+      XFlTkdhVkplMys3VXdPN2ZDTnNvUm5ZYjBlQmNkYjZSczZneUJuCm5pMktZOEJKQmFOQ01FQXdEZ\
+      1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGT\
+      E5oODB0RXdEbWF4eUxXM0RXeVpHSTJFUzZpTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUNRdQpmd\
+      Xg2SGQrTnRGMDRic3hZNm5BbUtWWjBNSUprZmR4bkhsK2N0NE14QWlCU2lBeGJGT200ZU1NLytmV\
+      ys0ZVZKCktCZ1RxUjU5cHNKQ0dvcnY5b0tTRlE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"
+
+users:
+- name: "645hw3-clus"
+  user:
+    token: "kubeconfig-user-v2xgxfrv5x:w77cgdcrtn86m7mrmkxd9ldjbzg4n7cx9skgwjvbg2mlvmlssdfpd2"
+
+
+contexts:
+- name: "645hw3-clus"
+  context:
+    user: "645hw3-clus"
+    cluster: "645hw3-clus"
+
+current-context: "645hw3-clus"
