@@ -3,6 +3,9 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+# Include demo-0.0.1-SNAPSHOT.jar despite target/ directory being ignored
+target/*
+!target/demo-0.0.1-SNAPSHOT.jar
 
 ### STS ###
 .apt_generated
