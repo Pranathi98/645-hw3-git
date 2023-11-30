@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Pranathi98/645-hw3-git.git
+    targetRevision: HEAD
+    path: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  syncPolicy:
+    syncOptions:
+    -CreateNamespace=true
+  automated:
+    selfHeal: true
+    prune: true
+
+
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["172.31.88.247"],"port":80,"protocol":"HTTP","serviceName":"default:hw3npdeploy","ingressName":"default:deployingress","hostname":"pranathistudentsurvey.com","allNodes":false},{"addresses":["172.31.88.247"],"port":31795,"protocol":"TCP","serviceName":"default:hw3npdeploy-nodeport","allNodes":true}]
+  creationTimestamp: '2023-11-15T02:44:37Z'
+  generation: 4
+  labels:
