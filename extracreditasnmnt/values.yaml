@@ -14,10 +14,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
-  ports:
-    - protocol: TCP
-      port: 8080  
-      targetPort: 8080 
+  
   syncPolicy:
     automated:
       selfHeal: true
