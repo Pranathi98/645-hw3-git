@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/Pranathi98/645-hw3-git.git
     targetRevision: HEAD
-    path: extracreditasnmnt
+    path: templates
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
