@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
 spec:
   project: default
+  
 
   source:
     repoURL: https://github.com/Pranathi98/645-hw3-git.git
@@ -13,6 +14,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
+  ports:
+    - protocol: TCP
+      port: 8080  
+      targetPort: 8080 
   syncPolicy:
     automated:
       selfHeal: true
